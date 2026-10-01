@@ -1,0 +1,9 @@
+[
+  { "value": 89, "minutesAgo": 60 },
+  { "value": 90, "minutesAgo": 50 },
+  { "value": 91, "minutesAgo": 40 },
+
+  { "value": 92, "minutesAgo": 30 },
+  { "value": 93, "minutesAgo": 20 },
+  { "value": 98, "minutesAgo": 10 }
+]
