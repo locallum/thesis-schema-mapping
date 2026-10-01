@@ -1,0 +1,12 @@
+[
+  {
+    "uuid": "2EE34064-99C8-4D04-BBCD-A8FAF3258631",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierHeartRate",
+    "value": 72.0,
+    "unit": "count/min",
+    "startDate": "2026-08-14T09:59:45Z",
+    "endDate": "2026-08-14T09:59:45Z",
+    "metadata": { "HKBridgeSessionID": "5D553611-1A7F-4ECE-8B2F-0FE5604DA7D7" },
+    "sourceRevision": "<HKSourceRevision name:HKBridge, bundle:com.loproduction.HKBridge, version:1, productType:iPhone11,2, operatingSystemVersion:18.7.9>"
+  }
+]

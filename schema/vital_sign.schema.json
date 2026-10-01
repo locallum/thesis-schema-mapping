@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Canonical Vital Sign Observation (simplified)",
+  "type": "object",
+  "required": ["status", "category", "code", "subject", "effectiveDateTime", "valueQuantity", "metadata"],
+  "properties": {
+    "status": {
+      "description": "Whether the reading is finished or a draft.",
+      "enum": ["final", "preliminary"]
+    },
+    "category": {
+      "description": "All records are vital signs.",
+      "const": "vital-signs"
+    },
+    "code": {
+      "description": "LOINC code for what was measured: 8867-4 heart rate, 2708-6 SpO2, 80404-7 HRV.",
+      "enum": ["8867-4", "2708-6", "80404-7"]
+    },
+    "subject": {
+      "description": "Who the reading belongs to: a patient ID or synthetic MRN.",
+      "type": "string"
+    },
+    "effectiveDateTime": {
+      "description": "When the reading happened, in ISO 8601 UTC.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "valueQuantity": {
+      "description": "The measured value, normalized to one canonical unit per code.",
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": { "type": "number" },
+        "unit": { "type": "string" }
+      }
+    },
+    "method": {
+      "description": "How HRV was calculated. Required for HRV records only.",
+      "enum": ["SDNN", "RMSSD"]
+    },
+    "metadata": {
+      "description": "Platform-specific fields kept from the source SDK. Fields a platform doesn't have are set to null.",
+      "type": "object",
+      "required": ["uuid", "sourceRevision", "recordingMethod", "lastModifiedTime", "sourceMetadata"],
+      "properties": {
+        "uuid": {
+          "description": "The source SDK's unique identifier for this reading.",
+          "type": "string"
+        },
+        "sourceRevision": {
+          "description": "Opaque, platform-specific description of the app/device that recorded the reading.",
+          "type": "string"
+        },
+        "recordingMethod": {
+          "description": "How the reading was captured, if the platform can say.",
+          "enum": ["RECORDING_METHOD_UNKNOWN", "ACTIVELY_RECORDED", "AUTOMATICALLY_RECORDED", "MANUAL_ENTRY", null]
+        },
+        "lastModifiedTime": {
+          "description": "When the source record was last modified, in ISO 8601 UTC, if the platform can say.",
+          "type": ["string", "null"]
+        },
+        "sourceMetadata": {
+          "description": "Catch-all for any other platform-specific metadata not promoted to a named field above.",
+          "type": "object"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "code": { "const": "80404-7" } } },
+      "then": { "required": ["method"] }
+    },
+    {
+      "if": { "properties": { "code": { "const": "8867-4" } } },
+      "then": { "properties": { "valueQuantity": { "properties": { "unit": { "const": "/min" } } } } }
+    },
+    {
+      "if": { "properties": { "code": { "const": "2708-6" } } },
+      "then": { "properties": { "valueQuantity": { "properties": { "unit": { "const": "%" } } } } }
+    },
+    {
+      "if": { "properties": { "code": { "const": "80404-7" } } },
+      "then": { "properties": { "valueQuantity": { "properties": { "unit": { "const": "ms" } } } } }
+    }
+  ]
+}
