@@ -76,6 +76,7 @@ struct TestSample: Decodable {
 // preserve field order.
 struct SampleRecord {
     let uuid: String
+    let quantityTypeIdentifier: String
     let value: Double
     let unit: String
     let startDate: String
@@ -229,6 +230,7 @@ final class HealthStoreManager {
         let i = "    "
         let lines = [
             "\(i)\"uuid\": \(jsonString(r.uuid))",
+            "\(i)\"quantityTypeIdentifier\": \(jsonString(r.quantityTypeIdentifier))",
             "\(i)\"value\": \(r.value)",
             "\(i)\"unit\": \(jsonString(r.unit))",
             "\(i)\"startDate\": \(jsonString(r.startDate))",
@@ -304,6 +306,7 @@ final class HealthStoreManager {
         let isoFormatter = ISO8601DateFormatter()
         return SampleRecord(
             uuid: sample.uuid.uuidString,
+            quantityTypeIdentifier: kind.quantityType.identifier,
             value: sample.quantity.doubleValue(for: kind.unit),
             unit: String(describing: kind.unit),
             startDate: isoFormatter.string(from: sample.startDate),

@@ -1,0 +1,36 @@
+[
+  {
+    "uuid": "AAA-valid",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierHeartRate",
+    "value": 70.0,
+    "unit": "count/min",
+    "startDate": "2026-08-14T09:59:45Z",
+    "endDate": "2026-08-14T09:59:45Z",
+    "metadata": {},
+    "sourceRevision": "src"
+  },
+  {
+    "uuid": "BBB-missing-fields",
+    "value": 70.0
+  },
+  {
+    "uuid": "CCC-unknown-identifier",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierBodyTemperature",
+    "value": 37.0,
+    "unit": "degC",
+    "startDate": "2026-08-14T09:59:45Z",
+    "endDate": "2026-08-14T09:59:45Z",
+    "metadata": {},
+    "sourceRevision": "src"
+  },
+  {
+    "uuid": "DDD-wrong-unit",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierHeartRate",
+    "value": 70.0,
+    "unit": "bpm",
+    "startDate": "2026-08-14T09:59:45Z",
+    "endDate": "2026-08-14T09:59:45Z",
+    "metadata": {},
+    "sourceRevision": "src"
+  }
+]
