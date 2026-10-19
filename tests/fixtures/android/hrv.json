@@ -1,0 +1,16 @@
+[
+  {
+    "time": "2026-08-14T08:00:00Z",
+    "zoneOffset": "Z",
+    "heartRateVariabilityMillis": 42.5,
+    "metadata": {
+      "clientRecordId": "HRV-001",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "c9e8d7c6-b5a4-4392-8170-6f5e4d3c2b01",
+      "lastModifiedTime": "2026-10-12T07:58:32.301Z",
+      "recordingMethod": 3
+    }
+  }
+]

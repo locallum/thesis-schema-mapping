@@ -1,0 +1,3 @@
+jsonschema>=4.18
+rfc3339-validator  # without this, jsonschema silently skips format: date-time
+pytest>=8.0

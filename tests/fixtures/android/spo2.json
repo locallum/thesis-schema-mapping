@@ -1,0 +1,34 @@
+[
+  {
+    "time": "2026-08-14T08:00:00Z",
+    "zoneOffset": "Z",
+    "percentage": 97,
+    "metadata": {
+      "clientRecordId": "SPO2-001",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "b7d1e2f3-4a5b-4c6d-8e9f-0a1b2c3d4e01",
+      "lastModifiedTime": "2026-10-12T07:58:31.988Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "time": "2026-08-14T08:05:00Z",
+    "zoneOffset": "+10:00",
+    "percentage": 89.5,
+    "metadata": {
+      "clientRecordId": "SPO2-002",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": {
+        "manufacturer": "Google",
+        "model": "Pixel Watch 3",
+        "type": 1
+      },
+      "id": "b7d1e2f3-4a5b-4c6d-8e9f-0a1b2c3d4e02",
+      "lastModifiedTime": "2026-10-12T07:58:31.988Z",
+      "recordingMethod": 2
+    }
+  }
+]
