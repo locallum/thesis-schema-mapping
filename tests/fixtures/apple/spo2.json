@@ -1,0 +1,28 @@
+[
+  {
+    "uuid": "B2E1D3C4-0001-4F6A-9B0C-000000000001",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierOxygenSaturation",
+    "value": 0.97,
+    "unit": "%",
+    "startDate": "2026-08-14T08:00:00Z",
+    "endDate": "2026-08-14T08:00:00Z",
+    "metadata": {
+      "HKBridgeSessionID": "5D553611-1A7F-4ECE-8B2F-0FE5604DA7D7",
+      "HKBridgeTestID": "SPO2-001"
+    },
+    "sourceRevision": "<HKSourceRevision name:HKBridge, bundle:com.loproduction.HKBridge, version:1, productType:iPhone11,2, operatingSystemVersion:18.7.9>"
+  },
+  {
+    "uuid": "B2E1D3C4-0002-4F6A-9B0C-000000000002",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierOxygenSaturation",
+    "value": 0.89,
+    "unit": "%",
+    "startDate": "2026-08-14T08:05:00Z",
+    "endDate": "2026-08-14T08:05:00Z",
+    "metadata": {
+      "HKBridgeSessionID": "5D553611-1A7F-4ECE-8B2F-0FE5604DA7D7",
+      "HKBridgeTestID": "SPO2-002"
+    },
+    "sourceRevision": "<HKSourceRevision name:HKBridge, bundle:com.loproduction.HKBridge, version:1, productType:iPhone11,2, operatingSystemVersion:18.7.9>"
+  }
+]

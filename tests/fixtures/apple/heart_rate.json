@@ -1,0 +1,41 @@
+[
+  {
+    "uuid": "A1F0C2D3-0001-4E5F-8A9B-000000000001",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierHeartRate",
+    "value": 72,
+    "unit": "count/min",
+    "startDate": "2026-08-14T08:00:00Z",
+    "endDate": "2026-08-14T08:00:00Z",
+    "metadata": {
+      "HKBridgeSessionID": "5D553611-1A7F-4ECE-8B2F-0FE5604DA7D7",
+      "HKBridgeTestID": "HR-001"
+    },
+    "sourceRevision": "<HKSourceRevision name:HKBridge, bundle:com.loproduction.HKBridge, version:1, productType:iPhone11,2, operatingSystemVersion:18.7.9>"
+  },
+  {
+    "uuid": "A1F0C2D3-0013-4E5F-8A9B-000000000010",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierHeartRate",
+    "value": 98,
+    "unit": "count/min",
+    "startDate": "2026-08-14T08:10:00Z",
+    "endDate": "2026-08-14T08:10:00Z",
+    "metadata": {
+      "HKBridgeSessionID": "5D553611-1A7F-4ECE-8B2F-0FE5604DA7D7",
+      "HKBridgeTestID": "HR-013"
+    },
+    "sourceRevision": "<HKSourceRevision name:HKBridge, bundle:com.loproduction.HKBridge, version:1, productType:iPhone11,2, operatingSystemVersion:18.7.9>"
+  },
+  {
+    "uuid": "A1F0C2D3-0013-4E5F-8A9B-000000000011",
+    "quantityTypeIdentifier": "HKQuantityTypeIdentifierHeartRate",
+    "value": 99,
+    "unit": "count/min",
+    "startDate": "2026-08-14T08:11:00Z",
+    "endDate": "2026-08-14T08:11:00Z",
+    "metadata": {
+      "HKBridgeSessionID": "5D553611-1A7F-4ECE-8B2F-0FE5604DA7D7",
+      "HKBridgeTestID": "HR-013"
+    },
+    "sourceRevision": "<HKSourceRevision name:HKBridge, bundle:com.loproduction.HKBridge, version:1, productType:iPhone11,2, operatingSystemVersion:18.7.9>"
+  }
+]
