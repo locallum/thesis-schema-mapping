@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vital Sign Mapper — demo</title>
+<style>
+  :root {
+    --ground:#FBFCFC; --surface:#F2F5F6; --sunk:#E8EDEF; --rule:#D3DDE0; --rule-soft:#E2E9EB;
+    --ink:#16242B; --ink-soft:#3C535C; --ink-mute:#5E7480;
+    --accent:#0F6E78; --accent-soft:#DCEDEF;
+    --apple:#4A6FA5; --apple-soft:#E6ECF5;
+    --android:#3F7D58; --android-soft:#E4EFE8;
+    --warn:#A8542B; --warn-soft:#F6E8E0;
+    --ok:#2E7D5B;
+    --f-display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --f-body:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --f-mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:#10181C; --surface:#182328; --sunk:#1E2B31; --rule:#2C3C43; --rule-soft:#223036;
+      --ink:#E3EAEC; --ink-soft:#B3C2C7; --ink-mute:#8AA0A8;
+      --accent:#4FB3BC; --accent-soft:#16343A;
+      --apple:#8FAEDC; --apple-soft:#1B2838;
+      --android:#76B98E; --android-soft:#17291F;
+      --warn:#D98A5A; --warn-soft:#33231A;
+      --ok:#5FB98C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:#10181C; --surface:#182328; --sunk:#1E2B31; --rule:#2C3C43; --rule-soft:#223036;
+    --ink:#E3EAEC; --ink-soft:#B3C2C7; --ink-mute:#8AA0A8;
+    --accent:#4FB3BC; --accent-soft:#16343A;
+    --apple:#8FAEDC; --apple-soft:#1B2838;
+    --android:#76B98E; --android-soft:#17291F;
+    --warn:#D98A5A; --warn-soft:#33231A;
+    --ok:#5FB98C;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--f-body); font-size:15px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .shell { max-width:1180px; margin:0 auto; padding:0 1.5rem 5rem; }
+
+  header.top { padding:2.5rem 0 0; }
+  .brand { display:flex; align-items:baseline; gap:.9rem; flex-wrap:wrap; }
+  h1 { font-family:var(--f-display); font-weight:400; font-size:1.9rem; letter-spacing:-.01em; margin:0; }
+  .sub { color:var(--ink-mute); font-size:.85rem; font-family:var(--f-mono); }
+  .chip {
+    font-family:var(--f-mono); font-size:.82rem; font-weight:600;
+    background:var(--accent-soft); color:var(--accent);
+    padding:.2rem .6rem; border-radius:3px; white-space:nowrap;
+  }
+
+  /* ---------- run console ---------- */
+  .console {
+    margin:2rem 0 0; background:var(--surface);
+    border:1px solid var(--rule); border-radius:4px; padding:1.5rem 1.6rem;
+  }
+  .console h2 {
+    font-family:var(--f-display); font-weight:400; font-size:1.25rem; margin:0 0 .35rem;
+  }
+  .console .why { color:var(--ink-mute); font-size:.88rem; margin:0 0 1.25rem; max-width:72ch; }
+
+  .runrow { display:flex; align-items:flex-end; gap:.9rem; flex-wrap:wrap; }
+  .field { display:flex; flex-direction:column; gap:.3rem; }
+  .field label {
+    font-family:var(--f-mono); font-size:.65rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--ink-mute);
+  }
+  input[type=text] {
+    font-family:var(--f-mono); font-size:.9rem; color:var(--ink);
+    background:var(--ground); border:1px solid var(--rule); border-radius:3px;
+    padding:.5rem .65rem; min-width:16rem;
+  }
+  button {
+    font-family:var(--f-body); font-size:.88rem; font-weight:600; cursor:pointer;
+    background:var(--accent); color:var(--ground); border:0; border-radius:3px;
+    padding:.55rem 1.2rem;
+  }
+  button.ghost { background:transparent; color:var(--accent); border:1px solid var(--rule); }
+  button:disabled { opacity:.45; cursor:default; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+  .spacer { flex:1 1 auto; }
+
+  /* ---------- pipeline ---------- */
+  .pipe { margin:1.5rem 0 0; display:flex; flex-direction:column; gap:0; }
+  .pipe[hidden] { display:none; }
+  .step {
+    display:grid; grid-template-columns:1.4rem 1fr auto; align-items:baseline; gap:.75rem;
+    padding:.55rem 0; border-bottom:1px solid var(--rule-soft);
+    opacity:.32; transition:opacity .25s ease;
+  }
+  .step:last-child { border-bottom:0; }
+  .step.active, .step.done { opacity:1; }
+  .step .mark {
+    font-family:var(--f-mono); font-size:.9rem; color:var(--ink-mute); text-align:center;
+  }
+  .step.active .mark { color:var(--accent); }
+  .step.done .mark { color:var(--ok); }
+  .step .what { font-size:.9rem; }
+  .step .what code { font-family:var(--f-mono); font-size:.85em; color:var(--ink-soft); }
+  .step .result {
+    font-family:var(--f-mono); font-size:.8rem; color:var(--ink-mute);
+    font-variant-numeric:tabular-nums; text-align:right;
+  }
+  .step.done .result { color:var(--ink); }
+  .step.fail .mark, .step.fail .result { color:var(--warn); }
+  /* steps never reached because an earlier one halted the run */
+  .step.skip { opacity:.3; }
+  .step.skip .mark, .step.skip .result { color:var(--ink-mute); }
+  .step.halt { opacity:1; }
+  .step.halt .mark, .step.halt .result { color:var(--warn); font-weight:650; }
+
+  @keyframes pulse { 0%,100% { opacity:.35 } 50% { opacity:1 } }
+  .step.active .mark { animation:pulse 1s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .step.active .mark { animation:none; }
+    .step { transition:none; }
+  }
+
+  .done-bar {
+    display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
+    margin:1.5rem 0 0; padding-top:1.25rem; border-top:1px solid var(--rule);
+  }
+  .done-bar p { margin:0; font-size:.9rem; }
+  .done-bar[hidden] { display:none; }
+
+  /* ---------- tabs ---------- */
+  nav.tabs { display:flex; gap:.25rem; flex-wrap:wrap; margin:2rem 0 0;
+    border-bottom:1px solid var(--rule); }
+  nav.tabs[hidden] { display:none; }
+  nav.tabs button {
+    background:transparent; color:var(--ink-mute); border:0; border-bottom:2px solid transparent;
+    border-radius:0; padding:.6rem .85rem; font-weight:500; font-size:.9rem; margin-bottom:-1px;
+  }
+  nav.tabs button[aria-selected="true"] { color:var(--ink); border-bottom-color:var(--accent); font-weight:650; }
+  nav.tabs button .pip {
+    display:inline-block; width:6px; height:6px; border-radius:50%; margin-left:.45rem; vertical-align:middle;
+  }
+  .pip.both { background:var(--accent); } .pip.one { background:var(--warn); } .pip.none { background:var(--rule); }
+
+  main { padding-top:2rem; }
+  h2.view-h { font-family:var(--f-display); font-weight:400; font-size:1.4rem; margin:0 0 .3rem; }
+  .lede { color:var(--ink-mute); font-size:.9rem; margin:0 0 1.5rem; max-width:70ch; }
+  h3 { font-size:.95rem; font-weight:650; margin:2rem 0 .7rem; }
+  .label {
+    font-family:var(--f-mono); font-size:.65rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-mute); margin:0 0 .6rem;
+  }
+
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1px;
+    background:var(--rule-soft); border:1px solid var(--rule-soft); border-radius:3px;
+    overflow:hidden; margin:0 0 1.75rem; }
+  .stat { background:var(--surface); padding:.85rem 1rem; }
+  .stat .k {
+    font-family:var(--f-mono); font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-mute); display:block; margin-bottom:.25rem;
+  }
+  .stat .v { font-size:1.25rem; font-variant-numeric:tabular-nums; font-weight:600; }
+  .stat .v.sm { font-size:.95rem; font-family:var(--f-mono); font-weight:500; }
+
+  .pair { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:1rem; }
+  .card {
+    background:var(--surface); border:1px solid var(--rule-soft);
+    border-top:2px solid var(--pf,var(--rule)); border-radius:3px; padding:1rem 1.1rem 1.15rem; min-width:0;
+  }
+  .card.apple { --pf:var(--apple); } .card.android { --pf:var(--android); } .card.canon { --pf:var(--accent); }
+  .card > h4 {
+    font-family:var(--f-mono); font-size:.67rem; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--pf,var(--ink-mute)); margin:0 0 .8rem; display:flex; gap:.5rem; align-items:center; flex-wrap:wrap;
+  }
+  .badge {
+    font-family:var(--f-mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase;
+    padding:.12rem .4rem; border-radius:2px; background:var(--sunk); color:var(--ink-mute);
+  }
+  .badge.fixture { background:var(--warn-soft); color:var(--warn); }
+  .badge.live { background:var(--accent-soft); color:var(--accent); }
+
+  pre {
+    font-family:var(--f-mono); font-size:.74rem; line-height:1.6; color:var(--ink-soft);
+    background:var(--sunk); border-radius:3px; padding:.8rem .9rem; margin:0; overflow-x:auto; white-space:pre;
+  }
+  code { font-family:var(--f-mono); font-size:.86em; }
+
+  .tscroll { overflow-x:auto; border:1px solid var(--rule-soft); border-radius:3px; }
+  table { border-collapse:collapse; width:100%; font-size:.82rem; font-variant-numeric:tabular-nums; }
+  th, td { text-align:left; padding:.5rem .8rem; border-bottom:1px solid var(--rule-soft); white-space:nowrap; }
+  th {
+    font-family:var(--f-mono); font-size:.62rem; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--ink-mute); font-weight:400; background:var(--surface); position:sticky; top:0;
+  }
+  tbody tr:last-child td { border-bottom:0; }
+  td.mono, th.mono { font-family:var(--f-mono); }
+  .num { text-align:right; }
+  .tag { font-family:var(--f-mono); font-size:.7rem; padding:.1rem .4rem; border-radius:2px; }
+  .tag.ios { background:var(--apple-soft); color:var(--apple); }
+  .tag.and { background:var(--android-soft); color:var(--android); }
+  .agree { color:var(--ok); font-weight:650; }
+  .differ { color:var(--warn); font-weight:650; }
+  .nul { color:var(--ink-mute); font-style:italic; }
+
+  .notice { border-radius:3px; padding:.85rem 1rem; margin:0 0 1.25rem; font-size:.87rem; }
+  .notice.warn { background:var(--warn-soft); border-left:2px solid var(--warn); }
+  .notice.info { background:var(--accent-soft); border-left:2px solid var(--accent); }
+  .notice p { margin:0 0 .5rem; } .notice p:last-child { margin:0; }
+  .notice strong { font-weight:650; }
+  .empty { color:var(--ink-mute); font-size:.9rem; padding:2rem 0; }
+
+  footer.foot {
+    margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule);
+    color:var(--ink-mute); font-size:.78rem; font-family:var(--f-mono);
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+<header class="top">
+  <div class="brand">
+    <h1>Vital Sign Mapper</h1>
+    <span class="chip" id="activeSubject" hidden></span>
+    <span class="sub" id="folder"></span>
+  </div>
+
+  <div class="console">
+    <h2>Run the pipeline</h2>
+    <p class="why">Enter a patient ID. The app reads the newest HealthKit and Health Connect exports out of your
+      Downloads folder, runs each platform's mapper over them, validates the output against the schema, and stamps
+      every record with the ID you give it. Phone exports carry no patient identity of their own — this is where
+      one gets attached.</p>
+
+    <div class="runrow">
+      <div class="field">
+        <label for="subject">Patient ID to assign</label>
+        <input type="text" id="subject" value="mrn-00123" spellcheck="false" autocomplete="off">
+      </div>
+      <button id="run">Run mapper</button>
+      <span class="spacer"></span>
+      <button id="fixtures" class="ghost" aria-pressed="true">Android fixtures: on</button>
+    </div>
+
+    <div class="pipe" id="pipe" hidden></div>
+
+    <div class="done-bar" id="doneBar" hidden>
+      <p id="doneMsg"></p>
+      <span class="spacer"></span>
+      <button id="toCompare">View comparison →</button>
+    </div>
+  </div>
+
+  <nav class="tabs" id="tabs" role="tablist" hidden></nav>
+</header>
+
+<main id="main"></main>
+<footer class="foot" id="foot"></footer>
+</div>
+
+<script>
+const KINDS = ["heart_rate","spo2","hrv"];
+const PLATFORMS = [["apple","Apple · HealthKit"],["android","Android · Health Connect"]];
+const LABELS = { heart_rate:"Heart rate", spo2:"Blood oxygen", hrv:"Heart rate variability" };
+
+let state = null, tab = "sources", useFixtures = true, running = false;
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const j = o => esc(JSON.stringify(o, null, 2));
+const nn = v => v === null || v === undefined ? '<span class="nul">null</span>' : esc(v);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+/* ------------------------------------------------------------------ *
+ * staged run
+ *
+ * The work is two real requests: /api/scan (find and identify files)
+ * then /api/state (run both mappers + validate). The stages in between
+ * are paced deliberately so each step is readable during a demo — the
+ * numbers shown are real results, only the reveal is slowed down.
+ * ------------------------------------------------------------------ */
+
+const STEPS = [
+  { id:"scan",     what:'Scanning <code>~/Downloads</code> for exports' },
+  { id:"identify", what:'Identifying each file by record shape' },
+  { id:"apple",    what:'Running <code>apple/mapper.py</code>' },
+  { id:"android",  what:'Running <code>android/mapper.py</code>' },
+  { id:"validate", what:'Validating against <code>vital_sign.schema.json</code>' },
+  { id:"compare",  what:'Pairing platforms for comparison' },
+];
+
+const PACE = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 120 : 620;
+
+function renderPipe() {
+  $("#pipe").hidden = false;
+  $("#pipe").innerHTML = STEPS.map(s =>
+    `<div class="step" id="step-${s.id}">
+       <span class="mark">○</span>
+       <span class="what">${s.what}</span>
+       <span class="result"></span>
+     </div>`).join("");
+}
+
+const MARKS = { done:"✓", fail:"×", halt:"!", skip:"·" };
+
+function stepState(id, cls, result) {
+  const el = $("#step-" + id);
+  if (!el) return;
+  el.classList.remove("active","done","fail","halt","skip");
+  if (cls) el.classList.add(cls);
+  el.querySelector(".mark").textContent = MARKS[cls] || "●";
+  if (result !== undefined) el.querySelector(".result").innerHTML = result;
+}
+
+/* Mark every step after `afterId` as never-reached. */
+function skipRest(afterId) {
+  const from = STEPS.findIndex(s => s.id === afterId) + 1;
+  STEPS.slice(from).forEach(s => stepState(s.id, "skip", "—"));
+}
+
+async function step(id, work, format) {
+  stepState(id, "active");
+  await sleep(PACE);
+  const out = await work();
+  stepState(id, "done", format(out));
+  return out;
+}
+
+async function run() {
+  if (running) return;
+  running = true;
+  const subject = $("#subject").value.trim() || "mrn-00123";
+
+  $("#run").disabled = true;
+  $("#run").textContent = "Running…";
+  $("#tabs").hidden = true;
+  $("#doneBar").hidden = true;
+  $("#main").innerHTML = "";
+  $("#foot").textContent = "";
+  $("#activeSubject").hidden = true;
+  renderPipe();
+
+  try {
+    const scan = await step("scan",
+      async () => {
+        const r = await fetch("/api/scan");
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || r.statusText);
+        return d;
+      },
+      d => d.counts.files ? `${d.counts.files} file(s) found` : "no files found");
+
+    $("#folder").textContent = scan.folder;
+
+    // Nothing to map: stop here rather than walking the mapper steps over an
+    // empty set. Fixtures are a per-platform fallback, not a substitute for
+    // having no exports at all.
+    if (scan.counts.files === 0) {
+      stepState("scan", "halt", "no files found");
+      skipRest("scan");
+      $("#main").innerHTML = `<div class="notice warn">
+        <p><strong>No exports found in <code>${esc(scan.folder)}</code>.</strong>
+           The run stopped at the scan — there was nothing to map.</p>
+        <p>To get data in: open HKBridge, tap <strong>Authorise</strong>, then in a
+           <em>single app launch</em> use the <strong>Write</strong> tab to Import Test Data and the
+           <strong>Read</strong> tab to Read Samples → Save as JSON → AirDrop here. Reads are filtered by a
+           session ID that changes every launch, so writing and reading must happen without restarting the app.</p>
+        <p>Then hit <strong>Run mapper</strong> again. Files are recognised by their record shape, so the
+           filename doesn't matter.</p></div>`;
+      return;
+    }
+
+    await step("identify",
+      async () => scan.counts,
+      c => `${c.apple} Apple · ${c.android} Android`);
+
+    const q = new URLSearchParams({ subject, fixtures: useFixtures ? "1" : "0" });
+    let data = null;
+    const mapAll = async () => {
+      if (!data) {
+        const r = await fetch("/api/state?" + q);
+        data = await r.json();
+        if (!r.ok) throw new Error(data.error || r.statusText);
+      }
+      return data;
+    };
+
+    await step("apple", mapAll, d => {
+      const p = d.totals.by_platform.apple;
+      return p.files ? `${p.raw} raw → ${p.canonical} records` : "no files";
+    });
+
+    await step("android", mapAll, d => {
+      const p = d.totals.by_platform.android;
+      return p.files ? `${p.raw} raw → ${p.canonical} records` : "no files";
+    });
+
+    await step("validate", mapAll, d =>
+      d.totals.skipped
+        ? `<span class="differ">${d.totals.canonical} valid · ${d.totals.skipped} skipped</span>`
+        : `${d.totals.canonical} valid · 0 skipped`);
+
+    await step("compare", mapAll, d =>
+      `${d.totals.paired} of 3 vital signs paired`);
+
+    state = data;
+    await sleep(PACE * 0.5);
+
+    $("#activeSubject").hidden = false;
+    $("#activeSubject").textContent = "subject: " + state.subject;
+    $("#doneMsg").innerHTML =
+      `<strong>${state.totals.canonical} canonical records</strong> mapped and stamped
+       <code>${esc(state.subject)}</code>.`;
+    $("#doneBar").hidden = false;
+    $("#tabs").hidden = false;
+    tab = "sources";
+    render();
+  } catch (e) {
+    STEPS.forEach(s => {
+      const el = $("#step-" + s.id);
+      if (el && el.classList.contains("active")) stepState(s.id, "fail", esc(e.message));
+    });
+    $("#main").innerHTML =
+      `<div class="notice warn"><p><strong>Run failed.</strong> ${esc(e.message)}</p></div>`;
+  } finally {
+    running = false;
+    $("#run").disabled = false;
+    $("#run").textContent = "Run mapper";
+  }
+}
+
+/* ---------------- views ---------------- */
+
+function renderTabs() {
+  const items = [["sources","Sources"], ...KINDS.map(k => [k, LABELS[k]]), ["compare","Compare"]];
+  $("#tabs").innerHTML = items.map(([id,label]) => {
+    let pip = "";
+    if (KINDS.includes(id)) {
+      const kd = state.kinds[id];
+      const n = (kd.apple ? 1 : 0) + (kd.android ? 1 : 0);
+      pip = `<span class="pip ${n === 2 ? "both" : n === 1 ? "one" : "none"}"></span>`;
+    }
+    return `<button role="tab" data-tab="${id}" aria-selected="${tab === id}">${esc(label)}${pip}</button>`;
+  }).join("");
+  $("#tabs").querySelectorAll("button").forEach(b =>
+    b.onclick = () => { tab = b.dataset.tab; render(); });
+}
+
+function render() {
+  renderTabs();
+  const t = state.totals;
+  $("#foot").textContent =
+    `${t.canonical} canonical records · ${t.files} file(s) · ${t.skipped} skipped · `
+    + `subject ${state.subject} · ${state.generated}`;
+  if (tab === "sources") viewSources();
+  else if (tab === "compare") viewCompare();
+  else viewKind(tab);
+  window.scrollTo({ top: 0, behavior: PACE > 200 ? "smooth" : "auto" });
+}
+
+function viewSources() {
+  const t = state.totals, d = state.discovered;
+  let h = `<h2 class="view-h">What this run used</h2>
+    <p class="lede">Files are identified by the <em>shape of their records</em>, not their filename — both bridge
+    apps name exports the same way. The newest file per platform and vital sign is the one that gets mapped.</p>`;
+
+  h += `<div class="stats">
+    <div class="stat"><span class="k">Files mapped</span><span class="v">${t.files}</span></div>
+    <div class="stat"><span class="k">Canonical records</span><span class="v">${t.canonical}</span></div>
+    <div class="stat"><span class="k">Skipped</span><span class="v">${t.skipped}</span></div>
+    <div class="stat"><span class="k">Platforms</span><span class="v sm">${t.platforms.join(" + ") || "—"}</span></div>
+    <div class="stat"><span class="k">Subject assigned</span><span class="v sm">${esc(state.subject)}</span></div>
+  </div>`;
+
+  if (state.fixtures_used.length) {
+    h += `<div class="notice warn"><p><strong>Using repo fixtures for Android.</strong>
+      No real Health Connect export was found for
+      ${state.fixtures_used.map(k => esc(LABELS[k].toLowerCase())).join(", ")},
+      so <code>tests/fixtures/android/</code> stood in. Synthetic single records — fine for showing the mapping,
+      not real teammate data. Anything from a fixture is marked
+      <span class="badge fixture">fixture</span>.</p></div>`;
+  }
+  if (state.errors.length) {
+    h += `<div class="notice warn"><p><strong>Read errors</strong></p>`
+      + state.errors.map(e => `<p>${esc(e)}</p>`).join("") + `</div>`;
+  }
+
+  h += `<h3>Detected exports</h3>`;
+  if (!d.length) {
+    h += `<p class="empty">Nothing recognised in <code>${esc(state.folder)}</code>.
+      AirDrop an export from HKBridge, then run again.</p>`;
+  } else {
+    h += `<div class="tscroll"><table><thead><tr>
+      <th>Platform</th><th>Vital sign</th><th>File</th><th class="num">Raw records</th><th>Modified (UTC)</th>
+      </tr></thead><tbody>`
+      + d.map(f => `<tr>
+        <td><span class="tag ${f.platform === "apple" ? "ios" : "and"}">${f.platform}</span></td>
+        <td>${esc(LABELS[f.kind])}</td>
+        <td class="mono">${esc(f.filename)}</td>
+        <td class="num">${f.raw_count}</td>
+        <td class="mono">${esc((f.modified || "").replace("T"," ").slice(0,19))}</td>
+      </tr>`).join("") + `</tbody></table></div>`;
+  }
+  $("#main").innerHTML = h;
+}
+
+function viewKind(kind) {
+  const kd = state.kinds[kind];
+  let h = `<h2 class="view-h">${esc(kd.label)}</h2>
+    <p class="lede">Raw export on the left, canonical output on the right — the same record, before and after its
+    platform's mapper ran.</p>`;
+
+  for (const [p, title] of PLATFORMS) {
+    const d = kd[p];
+    h += `<h3>${esc(title)}</h3>`;
+    if (!d) { h += `<p class="empty">No ${p} export for ${esc(kd.label.toLowerCase())}.</p>`; continue; }
+
+    const badge = d.source === "fixture"
+      ? '<span class="badge fixture">fixture</span>'
+      : '<span class="badge live">from downloads</span>';
+
+    h += `<div class="stats">
+      <div class="stat"><span class="k">Raw → canonical</span><span class="v">${d.raw_count} → ${d.canonical_count}</span></div>
+      <div class="stat"><span class="k">Unit</span><span class="v sm">${nn(d.unit)}</span></div>
+      <div class="stat"><span class="k">Method</span><span class="v sm">${nn(d.method)}</span></div>
+      <div class="stat"><span class="k">Range</span><span class="v sm">${d.value_min ?? "—"} – ${d.value_max ?? "—"}</span></div>
+      <div class="stat"><span class="k">Exit code</span><span class="v ${d.exit_code ? "differ" : "agree"}">${d.exit_code}</span></div>
+    </div>`;
+
+    if (d.warnings.length) {
+      h += `<div class="notice warn"><p><strong>${d.skipped} record(s) skipped</strong></p>`
+        + d.warnings.map(w => `<p class="mono">${esc(w)}</p>`).join("") + `</div>`;
+    }
+
+    h += `<div class="pair">
+      <div class="card ${p}">
+        <h4>Raw export ${badge}</h4>
+        <pre>${j(d.raw[0])}</pre>
+      </div>
+      <div class="card canon">
+        <h4>Canonical record</h4>
+        <pre>${j(d.canonical[0])}</pre>
+      </div>
+    </div>`;
+
+    h += `<h3>All ${d.canonical_count} canonical record(s)</h3>
+      <div class="tscroll"><table><thead><tr>
+        <th>#</th><th>subject</th><th>effectiveDateTime</th><th class="num">value</th><th>unit</th>
+        <th>code</th><th>method</th><th>recordingMethod</th><th>uuid</th>
+      </tr></thead><tbody>`
+      + d.canonical.map((r,i) => `<tr>
+        <td class="num">${i+1}</td>
+        <td class="mono">${esc(r.subject)}</td>
+        <td class="mono">${esc(r.effectiveDateTime)}</td>
+        <td class="num">${r.valueQuantity.value}</td>
+        <td class="mono">${esc(r.valueQuantity.unit)}</td>
+        <td class="mono">${esc(r.code)}</td>
+        <td class="mono">${nn(r.method)}</td>
+        <td class="mono">${nn(r.metadata.recordingMethod)}</td>
+        <td class="mono">${esc(String(r.metadata.uuid).slice(0,8))}…</td>
+      </tr>`).join("") + `</tbody></table></div>`;
+  }
+  $("#main").innerHTML = h;
+}
+
+function viewCompare() {
+  let h = `<h2 class="view-h">Apple against Android</h2>
+    <p class="lede">For each vital sign present on both platforms: do the clinical fields agree, is the record
+    shape identical, and where does the data legitimately diverge?</p>`;
+
+  const comparable = KINDS.filter(k => state.kinds[k].comparison);
+  if (!comparable.length) {
+    h += `<p class="empty">Nothing to compare — a vital sign needs an export from <em>both</em> platforms.
+      Turn Android fixtures on, or add a Health Connect export.</p>`;
+    $("#main").innerHTML = h; return;
+  }
+
+  for (const kind of comparable) {
+    const kd = state.kinds[kind], c = kd.comparison;
+    const realDiv = c.fields.filter(f => !f.agree && !f.expected);
+
+    h += `<h3>${esc(kd.label)}</h3>
+      <div class="stats">
+        <div class="stat"><span class="k">Records</span><span class="v sm">${c.counts.apple} vs ${c.counts.android}</span></div>
+        <div class="stat"><span class="k">Top-level keys</span><span class="v sm ${c.shape.top_level_identical ? "agree" : "differ"}">${c.shape.top_level_identical ? "identical" : "differ"}</span></div>
+        <div class="stat"><span class="k">Metadata keys</span><span class="v sm ${c.shape.metadata_identical ? "agree" : "differ"}">${c.shape.metadata_identical ? "identical" : "differ"}</span></div>
+        <div class="stat"><span class="k">Field divergences</span><span class="v">${c.divergences.length}</span></div>
+      </div>`;
+
+    h += `<div class="tscroll"><table><thead><tr>
+      <th>Clinical field</th><th>Apple</th><th>Android</th><th>Verdict</th>
+      </tr></thead><tbody>`
+      + c.fields.map(f => `<tr>
+          <td class="mono">${esc(f.field)}</td>
+          <td class="mono">${nn(f.apple)}</td>
+          <td class="mono">${nn(f.android)}</td>
+          <td>${f.agree ? '<span class="agree">agree</span>'
+                : f.expected ? '<span class="differ">differs — platform capability</span>'
+                : '<span class="differ">differs</span>'}</td>
+        </tr>`).join("") + `</tbody></table></div>`;
+
+    if (kind === "hrv" && c.fields.some(f => f.field === "method" && !f.agree)) {
+      h += `<div class="notice warn"><p><strong>Same code, same unit, different statistic.</strong>
+        Both records carry <code>80404-7</code> and <code>ms</code>, and both validate — but Apple's figure is
+        SDNN and Android's is RMSSD. Different formulas over the same heartbeats. These numbers are
+        <strong>not numerically comparable</strong>, and <code>method</code> is the only thing in the output that
+        says so.</p></div>`;
+    }
+
+    h += `<p class="label">Fields only one platform can answer</p>
+      <div class="tscroll"><table><thead><tr>
+      <th>Metadata field</th><th>Apple</th><th>Android</th>
+      </tr></thead><tbody>`
+      + c.nulls.map(n => `<tr>
+        <td class="mono">${esc(n.field)}</td>
+        <td class="mono">${nn(n.apple)}</td>
+        <td class="mono">${nn(n.android)}</td>
+      </tr>`).join("") + `</tbody></table></div>`;
+
+    if (!realDiv.length) {
+      h += `<div class="notice info"><p><strong>Converged.</strong> Every clinical field agrees except where a
+        platform genuinely cannot match the other, the record shape is identical in both tiers, and the
+        differences that remain are labelled rather than hidden.</p></div>`;
+    }
+  }
+  $("#main").innerHTML = h;
+}
+
+/* ---------------- wiring ---------------- */
+$("#run").onclick = run;
+$("#subject").addEventListener("keydown", e => { if (e.key === "Enter") run(); });
+$("#toCompare").onclick = () => { tab = "compare"; render(); };
+$("#fixtures").onclick = () => {
+  useFixtures = !useFixtures;
+  $("#fixtures").textContent = `Android fixtures: ${useFixtures ? "on" : "off"}`;
+  $("#fixtures").setAttribute("aria-pressed", String(useFixtures));
+};
+$("#subject").focus();
+$("#subject").select();
+</script>
+</body>
+</html>
