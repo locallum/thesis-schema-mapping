@@ -3,3 +3,10 @@ __pycache__/
 *_canonical.json
 *.canonical.json
 exports/
+.DS_Store
+__pycache__/
+.pytest_cache/
+canonical/
+provenance.db
+exports/
+*_canonical.json
