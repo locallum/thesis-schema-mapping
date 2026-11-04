@@ -1,0 +1,48 @@
+{
+  "heartRate": [
+    { "testId": "HR-001", "bpm": 150, "timestamp": "2026-08-10T00:00:00Z" },
+    { "testId": "HR-002", "bpm": 149, "timestamp": "2026-08-10T00:05:00Z" },
+    { "testId": "HR-003", "bpm": 148, "timestamp": "2026-08-10T00:10:00Z" },
+
+    { "testId": "HR-004", "bpm": 100, "timestamp": "2026-08-10T01:00:00Z" },
+    { "testId": "HR-005", "bpm": 99, "timestamp": "2026-08-10T01:05:00Z" },
+    { "testId": "HR-006", "bpm": 88, "timestamp": "2026-08-10T01:10:00Z" },
+
+    { "testId": "HR-007", "bpm": 51, "timestamp": "2026-08-10T02:00:00Z" },
+    { "testId": "HR-008", "bpm": 50, "timestamp": "2026-08-10T02:05:00Z" },
+    { "testId": "HR-009", "bpm": 49, "timestamp": "2026-08-10T02:10:00Z" },
+
+    { "testId": "HR-010", "bpm": 41, "timestamp": "2026-08-10T03:00:00Z" },
+    { "testId": "HR-011", "bpm": 40, "timestamp": "2026-08-10T03:05:00Z" },
+    { "testId": "HR-012", "bpm": 39, "timestamp": "2026-08-10T23:59:30Z" }
+  ],
+  "oxygenSaturation": [
+    { "testId": "SPO2-001", "percent": 98, "timestamp": "2026-08-10T00:00:00Z" },
+    { "testId": "SPO2-002", "percent": 93, "timestamp": "2026-08-10T00:10:00Z" },
+    { "testId": "SPO2-003", "percent": 92, "timestamp": "2026-08-10T00:20:00Z" },
+
+    { "testId": "SPO2-004", "percent": 91, "timestamp": "2026-08-10T01:00:00Z" },
+    { "testId": "SPO2-005", "percent": 90, "timestamp": "2026-08-10T01:10:00Z" },
+    { "testId": "SPO2-006", "percent": 89, "timestamp": "2026-08-10T01:20:00Z" }
+  ],
+  "heartRateVariability": [
+    { "testId": "HRV-001", "rmssdMillis": 45, "timestamp": "2026-08-10T00:00:00Z" },
+    { "testId": "HRV-002", "rmssdMillis": 92, "timestamp": "2026-08-10T00:10:00Z" },
+    { "testId": "HRV-003", "rmssdMillis": 90, "timestamp": "2026-08-10T00:20:00Z" },
+
+    { "testId": "HRV-004", "rmssdMillis": 88, "timestamp": "2026-08-10T01:00:00Z" },
+    { "testId": "HRV-005", "rmssdMillis": 60, "timestamp": "2026-08-10T01:10:00Z" },
+    { "testId": "HRV-006", "rmssdMillis": 58, "timestamp": "2026-08-10T01:20:00Z" },
+
+    { "testId": "HRV-007", "rmssdMillis": 55, "timestamp": "2026-08-10T02:00:00Z" },
+    { "testId": "HRV-008", "rmssdMillis": 40, "timestamp": "2026-08-10T02:10:00Z" },
+    { "testId": "HRV-009", "rmssdMillis": 38, "timestamp": "2026-08-10T02:20:00Z" },
+
+    { "testId": "HRV-010", "rmssdMillis": 25, "timestamp": "2026-08-10T03:00:00Z" },
+    { "testId": "HRV-011", "rmssdMillis": 24, "timestamp": "2026-08-10T03:10:00Z" },
+    { "testId": "HRV-012", "rmssdMillis": 22, "timestamp": "2026-08-10T23:59:30Z" }
+  ]
+}
+
+
+

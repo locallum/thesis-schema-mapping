@@ -26,7 +26,7 @@ def pull_latest(package: str, dest: Path) -> list[Path]:
         raise SystemExit("error: adb not found on PATH - install Android platform-tools")
 
     listing = subprocess.run(
-        ["adb", "exec-out", "run-as", package, "ls", "-t", "files"],
+        ["adb", "exec-out", "run-as", package, "ls", "-t", "-1", "files"],
         capture_output=True, text=True,
     )
     if listing.returncode != 0:
