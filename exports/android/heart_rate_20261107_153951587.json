@@ -1,0 +1,254 @@
+[
+  {
+    "startTime": "2026-08-10T00:00:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T00:00:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T00:00:00Z",
+        "beatsPerMinute": 150
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T00:00:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "82a2aa9d-66c9-3cbf-a93c-db5cf9a7dce5",
+      "lastModifiedTime": "2026-11-07T04:39:47.656Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T00:05:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T00:05:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T00:05:00Z",
+        "beatsPerMinute": 149
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T00:05:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "21117805-a3a7-3337-a379-1fa5d16c4e8c",
+      "lastModifiedTime": "2026-11-07T04:39:47.656Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T00:10:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T00:10:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T00:10:00Z",
+        "beatsPerMinute": 148
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T00:10:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "7261dde6-a784-3c73-91af-0c48b1e1362f",
+      "lastModifiedTime": "2026-11-07T04:39:47.656Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T01:00:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T01:00:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T01:00:00Z",
+        "beatsPerMinute": 100
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T01:00:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "8ac4d982-6a73-35c4-9da1-2d9c263dc092",
+      "lastModifiedTime": "2026-11-07T04:39:47.656Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T01:05:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T01:05:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T01:05:00Z",
+        "beatsPerMinute": 99
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T01:05:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "4678bebd-1272-3dc0-b7c7-e9d102cddb45",
+      "lastModifiedTime": "2026-11-07T04:39:47.656Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T01:10:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T01:10:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T01:10:00Z",
+        "beatsPerMinute": 88
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T01:10:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "f54c78ff-4f3c-30b6-a56f-05a9720c35cf",
+      "lastModifiedTime": "2026-11-07T04:39:47.657Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T02:00:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T02:00:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T02:00:00Z",
+        "beatsPerMinute": 51
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T02:00:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "8cb5386f-622f-37cc-bded-4f1739976ace",
+      "lastModifiedTime": "2026-11-07T04:39:47.657Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T02:05:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T02:05:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T02:05:00Z",
+        "beatsPerMinute": 50
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T02:05:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "033685df-1b27-321d-9aff-eb99b0979301",
+      "lastModifiedTime": "2026-11-07T04:39:47.657Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T02:10:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T02:10:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T02:10:00Z",
+        "beatsPerMinute": 49
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T02:10:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "2fbb01b2-21d9-3d77-a0fa-25d436fbf113",
+      "lastModifiedTime": "2026-11-07T04:39:47.657Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T03:00:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T03:00:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T03:00:00Z",
+        "beatsPerMinute": 41
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T03:00:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "6f648ab7-3a0b-3748-bcb4-697c2327d18e",
+      "lastModifiedTime": "2026-11-07T04:39:47.657Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T03:05:00Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T03:05:00Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T03:05:00Z",
+        "beatsPerMinute": 40
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T03:05:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "efedcc78-35ea-366d-b860-544d0cc65d0b",
+      "lastModifiedTime": "2026-11-07T04:39:47.657Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "startTime": "2026-08-10T23:59:30Z",
+    "startZoneOffset": "Z",
+    "endTime": "2026-08-10T23:59:30Z",
+    "endZoneOffset": "Z",
+    "samples": [
+      {
+        "time": "2026-08-10T23:59:30Z",
+        "beatsPerMinute": 39
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-08-10T23:59:30Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "96e86f5d-5887-3275-adb3-6616e201c9b6",
+      "lastModifiedTime": "2026-11-07T04:39:47.657Z",
+      "recordingMethod": 3
+    }
+  }
+]

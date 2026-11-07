@@ -1,0 +1,1152 @@
+[
+  {
+    "startTime": "2026-11-06T23:22:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:22:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:22:00Z",
+        "beatsPerMinute": 87
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:22:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "05c7a691-5842-3dee-b173-a2ad06a430ea",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:24:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:24:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:24:00Z",
+        "beatsPerMinute": 87
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:24:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "da4b6d30-b7fc-3832-ad4c-bde71cffac43",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:26:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:26:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:26:00Z",
+        "beatsPerMinute": 87
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:26:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "42acf685-9a5d-3d73-b4f9-901f24b15f24",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:28:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:28:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:28:00Z",
+        "beatsPerMinute": 87
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:28:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "a79851f6-c92a-3745-ab06-3c7751281151",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:30:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:30:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:30:00Z",
+        "beatsPerMinute": 87
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:30:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "5ef8250a-0130-3803-897c-228d0de150d2",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:32:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:32:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:32:00Z",
+        "beatsPerMinute": 87
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:32:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "d4d97f3f-d164-38c2-9e06-d88575a1f3fa",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:34:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:34:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:34:00Z",
+        "beatsPerMinute": 87
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:34:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "e22409f1-5a8e-3ea3-97ac-5293561aaf90",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:36:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:36:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:36:00Z",
+        "beatsPerMinute": 93
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:36:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "0461ba73-52e1-3d1e-ad97-c32a8697f2fb",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:38:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:38:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:38:00Z",
+        "beatsPerMinute": 97
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:38:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "6490644d-b8a1-375d-be6a-fba864b8f47e",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:40:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:40:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:40:00Z",
+        "beatsPerMinute": 97
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:40:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "e14972c2-648c-3af4-a1d4-94884c478394",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:42:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:42:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:42:00Z",
+        "beatsPerMinute": 100
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:42:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "45d40580-7b47-3d0d-aa19-665b1b0e9843",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:44:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:44:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:44:00Z",
+        "beatsPerMinute": 96
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:44:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "9247a7b9-48a4-3916-b13a-3f6a80ea1b31",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:46:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:46:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:46:00Z",
+        "beatsPerMinute": 100
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:46:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "00a33789-7fb5-368d-b4b7-2969fd7cdb25",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:48:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:48:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:48:00Z",
+        "beatsPerMinute": 98
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:48:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "f2386221-fed7-36a8-a584-f60478ef599c",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:50:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:50:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:50:00Z",
+        "beatsPerMinute": 97
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:50:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "16f8a23d-7fe1-3bd5-be58-cff38398503c",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:52:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:52:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:52:00Z",
+        "beatsPerMinute": 95
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:52:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "8bb1315f-ef90-38d9-8f89-12cf543370e2",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:54:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:54:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:54:00Z",
+        "beatsPerMinute": 94
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:54:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "8210598c-d18b-3e3c-897d-bbcf8a2bd9ef",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:56:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:56:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:56:00Z",
+        "beatsPerMinute": 94
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:56:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "bd160e56-8738-3ca0-8a97-08f46d165494",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-06T23:58:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-06T23:58:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-06T23:58:00Z",
+        "beatsPerMinute": 91
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-06T23:58:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "ab77b62f-d7c2-3eb4-8e36-5cc5fb1ee2e4",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:00:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:00:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:00:00Z",
+        "beatsPerMinute": 86
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:00:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "b8688459-a3c2-3802-af15-0fde05143e3f",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:02:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:02:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:02:00Z",
+        "beatsPerMinute": 99
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:02:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "2e239eba-456f-3d15-8780-2725b2878d0f",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:04:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:04:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:04:00Z",
+        "beatsPerMinute": 106
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:04:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "097751d7-b987-30f7-a3db-da7a0f4302c7",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:06:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:06:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:06:00Z",
+        "beatsPerMinute": 96
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:06:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "977e695f-336e-3ef9-82c3-467a4c5e61bc",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:08:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:08:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:08:00Z",
+        "beatsPerMinute": 88
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:08:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "a2599a60-4d38-3787-a206-7af84074b3f7",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:10:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:10:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:10:00Z",
+        "beatsPerMinute": 92
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:10:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "f03f4795-2a8f-3051-a127-764caf12ed03",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:12:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:12:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:12:00Z",
+        "beatsPerMinute": 97
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:12:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "e63cefa9-618a-337a-a0d6-8306c2bd73d8",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:14:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:14:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:14:00Z",
+        "beatsPerMinute": 96
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:14:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "075c949d-544a-3443-8f33-5e9d5300ae28",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:16:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:16:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:16:00Z",
+        "beatsPerMinute": 97
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:16:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "c6310bd3-dab4-30fb-a47d-85eb5b910d61",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:18:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:18:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:18:00Z",
+        "beatsPerMinute": 104
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:18:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "ec064ff1-2290-307b-9418-13fbafb9ff1d",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:20:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:20:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:20:00Z",
+        "beatsPerMinute": 100
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:20:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "1cc7ac4a-27da-3a75-bb2d-568c23826525",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:22:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:22:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:22:00Z",
+        "beatsPerMinute": 95
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:22:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "c494621d-3d1b-3fb9-adae-ad62b54a4747",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:24:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:24:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:24:00Z",
+        "beatsPerMinute": 99
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:24:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "ed6f687a-eaf5-3ace-b1bc-2f6dec29ba00",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:26:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:26:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:26:00Z",
+        "beatsPerMinute": 104
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:26:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "0c40350e-8bd5-38da-a352-d0ffea70e5f4",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:28:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:28:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:28:00Z",
+        "beatsPerMinute": 100
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:28:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "89daa2d6-4732-3a51-91bb-9c2d177fe857",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:30:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:30:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:30:00Z",
+        "beatsPerMinute": 93
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:30:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "08db2fb2-b2da-3396-966b-6bf93e3e7f67",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:32:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:32:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:32:00Z",
+        "beatsPerMinute": 96
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:32:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "6bfab712-c98c-3039-9db7-ac24d652770f",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:34:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:34:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:34:00Z",
+        "beatsPerMinute": 99
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:34:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "44fb9012-3be7-3255-a128-0bfd6a90bbd6",
+      "lastModifiedTime": "2026-11-07T00:54:04.666Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:36:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:36:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:36:00Z",
+        "beatsPerMinute": 97
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:36:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "734fe643-bccc-3827-859b-aec0fcb8c0a5",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:38:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:38:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:38:00Z",
+        "beatsPerMinute": 97
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:38:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "6b9c2472-8f09-3104-9224-9420c5c556d8",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:40:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:40:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:40:00Z",
+        "beatsPerMinute": 96
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:40:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "0756ef7a-babf-323c-bffe-8c18195afcb8",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:42:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:42:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:42:00Z",
+        "beatsPerMinute": 92
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:42:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "e77e3a08-639c-34bc-b4c7-73c7a98bd56b",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:44:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:44:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:44:00Z",
+        "beatsPerMinute": 99
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:44:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "e3df2158-6118-3cde-a69c-b33ff3ba514f",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:46:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:46:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:46:00Z",
+        "beatsPerMinute": 108
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:46:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "ea727548-8aca-3635-bea4-f5543c284346",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:48:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:48:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:48:00Z",
+        "beatsPerMinute": 86
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:48:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "a5622889-6cc3-3d28-b3c7-7491af9d27dd",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:50:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:50:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:50:00Z",
+        "beatsPerMinute": 105
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:50:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "15d0c51c-63bb-3c5d-add1-248e38cbba17",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  },
+  {
+    "startTime": "2026-11-07T00:52:00Z",
+    "startZoneOffset": "+11:00",
+    "endTime": "2026-11-07T00:52:00.999Z",
+    "endZoneOffset": "+11:00",
+    "samples": [
+      {
+        "time": "2026-11-07T00:52:00Z",
+        "beatsPerMinute": 115
+      }
+    ],
+    "metadata": {
+      "clientRecordId": "2026-11-07T00:52:00Z",
+      "clientRecordVersion": 1,
+      "dataOrigin": "com.garmin.android.apps.connectmobile",
+      "device": {
+        "manufacturer": null,
+        "model": null,
+        "type": 1
+      },
+      "id": "2cb9288d-f7fb-357b-8551-4194531a301d",
+      "lastModifiedTime": "2026-11-07T00:54:04.667Z",
+      "recordingMethod": 2
+    }
+  }
+]

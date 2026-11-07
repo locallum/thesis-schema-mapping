@@ -1,0 +1,86 @@
+[
+  {
+    "time": "2026-08-10T00:00:00Z",
+    "zoneOffset": "Z",
+    "percentage": 98,
+    "metadata": {
+      "clientRecordId": "2026-08-10T00:00:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "9632c93d-f98b-3eef-8085-1ae45c3bd1f6",
+      "lastModifiedTime": "2026-11-07T04:39:47.721Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "time": "2026-08-10T00:10:00Z",
+    "zoneOffset": "Z",
+    "percentage": 93,
+    "metadata": {
+      "clientRecordId": "2026-08-10T00:10:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "4eaaf190-8048-3acd-a1a5-47022b00837e",
+      "lastModifiedTime": "2026-11-07T04:39:47.721Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "time": "2026-08-10T00:20:00Z",
+    "zoneOffset": "Z",
+    "percentage": 92,
+    "metadata": {
+      "clientRecordId": "2026-08-10T00:20:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "422d914c-4fc1-306e-90fd-43168fb4270e",
+      "lastModifiedTime": "2026-11-07T04:39:47.721Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "time": "2026-08-10T01:00:00Z",
+    "zoneOffset": "Z",
+    "percentage": 91,
+    "metadata": {
+      "clientRecordId": "2026-08-10T01:00:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "30912e3f-f6ff-3dc7-a6d8-7a0b64ac8d65",
+      "lastModifiedTime": "2026-11-07T04:39:47.721Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "time": "2026-08-10T01:10:00Z",
+    "zoneOffset": "Z",
+    "percentage": 90,
+    "metadata": {
+      "clientRecordId": "2026-08-10T01:10:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "a488092b-f739-361d-bd6e-afc8222f420b",
+      "lastModifiedTime": "2026-11-07T04:39:47.721Z",
+      "recordingMethod": 3
+    }
+  },
+  {
+    "time": "2026-08-10T01:20:00Z",
+    "zoneOffset": "Z",
+    "percentage": 89,
+    "metadata": {
+      "clientRecordId": "2026-08-10T01:20:00Z",
+      "clientRecordVersion": 0,
+      "dataOrigin": "com.example.healthconnectbridge",
+      "device": null,
+      "id": "21f9f45e-42d2-30c7-a554-0d2f9cf82c5e",
+      "lastModifiedTime": "2026-11-07T04:39:47.721Z",
+      "recordingMethod": 3
+    }
+  }
+]
