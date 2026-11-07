@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 DEFAULT_PACKAGE = "com.example.healthconnectbridge"
-_KINDS = ("heart_rate", "spo2", "hrv")
+_KINDS = ("heart_rate", "spo2", "hrv", "watch_heart_rate", "watch_stream")
 
 
 def pull_latest(package: str, dest: Path) -> list[Path]:
