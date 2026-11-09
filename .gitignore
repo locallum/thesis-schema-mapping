@@ -8,3 +8,7 @@ __pycache__/
 canonical/
 provenance.db
 *_canonical.json
+
+# Xcode per-user state
+xcuserdata/
+*.xcuserstate
