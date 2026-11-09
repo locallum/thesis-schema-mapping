@@ -325,9 +325,32 @@ app = Flask(__name__, static_folder=None)
 _config: dict[str, Any] = {"folder": Path.home() / "Downloads", "subject": "mrn-00123"}
 
 
+_BRAND_DIR = Path(__file__).resolve().parent / "brand"
+_LOGO_STEMS = ("unsw-logo", "logo")
+_LOGO_TYPES = {".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg",
+               ".jpeg": "image/jpeg", ".webp": "image/webp"}
+
+
 @app.get("/")
 def index():
     return send_from_directory(Path(__file__).resolve().parent, "app.html")
+
+
+@app.get("/brand/logo")
+def brand_logo():
+    """Serve an institutional logo if one has been dropped into demo/brand/.
+
+    Nothing is bundled: the real UNSW mark is a trademark and has to come from
+    the university's own brand assets. Absent a file, the UI falls back to a
+    plain type lockup rather than an imitation.
+    """
+    if _BRAND_DIR.is_dir():
+        for stem in _LOGO_STEMS:
+            for ext, mime in _LOGO_TYPES.items():
+                candidate = _BRAND_DIR / f"{stem}{ext}"
+                if candidate.is_file():
+                    return send_from_directory(_BRAND_DIR, candidate.name, mimetype=mime)
+    return jsonify({"error": "no logo installed"}), 404
 
 
 @app.get("/api/scan")
