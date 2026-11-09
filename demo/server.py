@@ -28,7 +28,12 @@ from apple import mapper as apple_mapper
 
 _ROOT = Path(__file__).resolve().parent.parent
 _SCHEMA_PATH = _ROOT / "schema" / "vital_sign.schema.json"
-_FIXTURE_DIR = _ROOT / "tests" / "fixtures" / "android"
+# Where the Android stand-in exports live when no real export is in the watched
+# folder. These are real Health Connect exports from the bridge app, generated
+# from the shared spec in test_data/test_cases.json — not the synthetic
+# hand-written records under tests/fixtures/android/, which exist for the unit
+# tests and are not representative of device output.
+_FIXTURE_DIR = _ROOT / "exports" / "android"
 
 KINDS = ("heart_rate", "spo2", "hrv")
 
@@ -122,23 +127,37 @@ def newest_per_slot(files: list[dict[str, Any]]) -> dict[tuple[str, str], dict[s
 
 
 def fixture_fallbacks() -> dict[tuple[str, str], dict[str, Any]]:
-    """Repo Android fixtures, used only when no real Android export is present.
+    """Stand-in Android exports, used only when the watched folder has none.
 
-    Flagged as fixtures in the payload so the UI can never pass them off as
-    teammate data.
+    Filenames are timestamped, so each kind is matched by prefix and the newest
+    wins — the same convention android/pull.py uses. `watch_*` exports are
+    skipped: a streamed session isn't the paired test dataset, and it would
+    otherwise shadow heart_rate_* for the heart-rate slot.
+
+    Everything here is flagged `source: "fixture"` so the UI can never present
+    it as a freshly pulled export.
     """
     out: dict[tuple[str, str], dict[str, Any]] = {}
+    if not _FIXTURE_DIR.is_dir():
+        return out
+
     for kind in KINDS:
-        path = _FIXTURE_DIR / f"{kind}.json"
-        if not path.exists():
+        candidates = [
+            p for p in _FIXTURE_DIR.glob(f"{kind}*.json")
+            if p.name == f"{kind}.json" or p.name.startswith(f"{kind}_")
+        ]
+        if not candidates:
             continue
+        path = max(candidates, key=lambda p: p.stat().st_mtime)
         try:
             records = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             continue
+        if not isinstance(records, list) or not records:
+            continue
         out[("android", kind)] = {
             "path": str(path),
-            "filename": f"tests/fixtures/android/{kind}.json",
+            "filename": str(path.relative_to(_ROOT)),
             "platform": "android",
             "kind": kind,
             "raw_count": len(records),

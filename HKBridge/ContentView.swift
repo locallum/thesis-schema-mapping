@@ -182,6 +182,8 @@ struct WatchPage: View {
     @State private var selectedKind: SampleKind = .heartRate
     @State private var watchTask: Task<Void, Never>?
     @State private var output = ""
+    @State private var records: [SampleRecord] = []
+    @State private var exportURL: URL?
 
     private var isWatching: Bool { watchTask != nil }
 
@@ -197,6 +199,8 @@ struct WatchPage: View {
                 .onChange(of: selectedKind) {
                     stopWatching()
                     output = ""
+                    records = []
+                    exportURL = nil
                 }
 
                 Button {
@@ -215,6 +219,27 @@ struct WatchPage: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(isWatching ? .red : .accentColor)
+
+                // Session summary: a live count while streaming, then the export
+                // once stopped. Exporting mid-stream would snapshot a session the
+                // user hasn't finished recording.
+                if !records.isEmpty {
+                    if isWatching {
+                        Label(
+                            "\(records.count) sample(s) captured — stop to export",
+                            systemImage: "dot.radiowaves.left.and.right"
+                        )
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                    } else if let exportURL {
+                        ShareLink(item: exportURL, preview: SharePreview(exportURL.lastPathComponent)) {
+                            Label("Save \(records.count) Sample(s) as JSON", systemImage: "square.and.arrow.up")
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                }
 
                 ScrollViewReader { proxy in
                     ScrollView {
@@ -251,10 +276,13 @@ struct WatchPage: View {
 
     private func startWatching() {
         output = "Watching for \(selectedKind.rawValue) samples from Apple Watch…"
+        records = []
+        exportURL = nil
         watchTask = Task {
             do {
-                for try await text in healthStoreManager.streamWatchSamples(kind: selectedKind) {
-                    output += "\n" + text
+                for try await update in healthStoreManager.streamWatchSamples(kind: selectedKind) {
+                    output += "\n" + update.text
+                    records.append(update.record)
                 }
             } catch is CancellationError {
                 // stopped by the user
@@ -262,12 +290,30 @@ struct WatchPage: View {
                 output += "\nError watching samples: \(error)"
             }
             watchTask = nil
+            // The stream can also end on its own; export either way.
+            prepareExport()
         }
     }
 
     private func stopWatching() {
         watchTask?.cancel()
         watchTask = nil
+        prepareExport()
+    }
+
+    // Writes the session to a JSON file and keeps the URL for ShareLink.
+    // Named watch_<kind>_<timestamp>.json so a streamed session is
+    // distinguishable from a Read-tab export of the same vital sign.
+    private func prepareExport() {
+        guard !records.isEmpty else {
+            exportURL = nil
+            return
+        }
+        exportURL = healthStoreManager.writeJSON(
+            records: records,
+            kind: selectedKind,
+            prefix: "watch_"
+        )
     }
 }
 

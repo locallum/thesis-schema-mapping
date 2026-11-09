@@ -71,6 +71,10 @@
     display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap;
   }
   #logo { height: 30px; width: auto; display: block; }
+  /* The `hidden` attribute applies display:none from the UA stylesheet, which
+     the rule above would otherwise beat. Higher specificity restores it, so a
+     missing logo leaves no broken-image placeholder. */
+  #logo[hidden], .lockup-div[hidden] { display: none; }
   .lockup { display: flex; align-items: center; gap: .9rem; min-width: 0; }
   .lockup-div { width: 1px; height: 28px; background: var(--line-firm); }
   .titles { min-width: 0; }

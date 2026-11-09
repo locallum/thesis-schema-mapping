@@ -92,6 +92,13 @@ struct ReadResult {
     let records: [SampleRecord]
 }
 
+// One sample arriving from the watch: the line shown on screen plus the
+// structured record, so a session can be exported the same way a read is.
+struct WatchUpdate {
+    let text: String
+    let record: SampleRecord
+}
+
 final class HealthStoreManager {
     static let sessionIDMetadataKey = "HKBridgeSessionID"
 
@@ -207,13 +214,13 @@ final class HealthStoreManager {
     // directory and returns its URL for sharing/exporting. Built by hand so the
     // field order matches the Read tab; JSONEncoder does not preserve key order.
     // Returns nil on failure.
-    func writeJSON(records: [SampleRecord], kind: SampleKind) -> URL? {
+    func writeJSON(records: [SampleRecord], kind: SampleKind, prefix: String = "") -> URL? {
         let body = records.map(recordJSON).joined(separator: ",\n")
         let json = records.isEmpty ? "[]\n" : "[\n\(body)\n]\n"
 
         let nameFormatter = DateFormatter()
         nameFormatter.dateFormat = "yyyyMMdd_HHmmss"
-        let filename = "\(kind.testDataFileName)_\(nameFormatter.string(from: Date())).json"
+        let filename = "\(prefix)\(kind.testDataFileName)_\(nameFormatter.string(from: Date())).json"
         let url = FileManager.default.temporaryDirectory.appendingPathComponent(filename)
 
         do {
@@ -274,7 +281,7 @@ final class HealthStoreManager {
 
     // Streams samples recorded by the paired Apple Watch as they sync in,
     // starting from the moment this is called. Ends when the consuming task is cancelled.
-    func streamWatchSamples(kind: SampleKind) -> AsyncThrowingStream<String, Error> {
+    func streamWatchSamples(kind: SampleKind) -> AsyncThrowingStream<WatchUpdate, Error> {
         let predicate = HKQuery.predicateForSamples(withStart: Date(), end: nil)
         let descriptor = HKAnchoredObjectQueryDescriptor(
             predicates: [.quantitySample(type: kind.quantityType, predicate: predicate)],
@@ -290,7 +297,9 @@ final class HealthStoreManager {
                             guard sample.sourceRevision.productType?.hasPrefix("Watch") == true else { continue }
                             let text = self.formatSample(sample, kind: kind)
                             print(text)
-                            continuation.yield(text)
+                            continuation.yield(
+                                WatchUpdate(text: text, record: self.makeRecord(sample, kind: kind))
+                            )
                         }
                     }
                     continuation.finish()
